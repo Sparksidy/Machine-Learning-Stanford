@@ -26,12 +26,16 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+mu = mean(X);
+sigma  = std(X);
 
+indices = 1:size(X,2);
 
-
-
-
-
+for i = indices
+    numerator = X( : ,i) - mu(i);
+    denominator = sigma(i);
+    X_norm = numerator/denominator;
+end
 
 
 % ============================================================
